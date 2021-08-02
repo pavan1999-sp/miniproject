@@ -1,0 +1,25 @@
+
+ <app-navbar></app-navbar>
+
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav>
+
+<app-side-navbar (closeSideNav)="sidenav.close()" ></app-side-navbar>
+
+    
+
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+        <app-subnav (SideNavToggle)="sidenav.toggle()"></app-subnav>
+    
+      
+  
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+      
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+

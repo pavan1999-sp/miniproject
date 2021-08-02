@@ -1,0 +1,124 @@
+<!-- Navbar start -->
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-info"  >
+    <!-- <button class="btn btn-outline-dark">
+      <i class="fa fa-sliders" ></i>
+    </button> -->
+    <a class="navbar-brand px-5" href="#">
+      <img src="../../assets/logo.png" alt="logo" width="50" height="40">
+    </a>
+    <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse  px-5" id="navbarSupportedContent">
+      <form class="form-inline ptx-md-5" method="get" novalidate>
+        <div class="input-group">
+          <!-- Menu -->
+          <div class="input-group-prepend ">
+            <div class="dropdown">
+              <button class="btn btn-warning" name="btnCategory" type="button" id="btnCategoryDropdownMenu"
+                data-bs-toggle="dropdown" aria-expanded="false">All</button>
+              <ul class="dropdown-menu" aria-labelledby="btnCategoryDropdownMenu">
+                <li><a class="dropdown-item" href="#">All</a></li>
+                <li><a class="dropdown-item" href="#">Men's Ware</a></li>
+                <li><a class="dropdown-item" href="#">Women's Ware</a></li>
+                <li><a class="dropdown-item" href="#">Kide's Ware</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Search -->
+          <input class="form-control " name="query" id="query" size="80" type="search" placeholder="Search">
+          <input type="search" name="category" id="category" value="book" hidden>
+          <div class="input-group-append">
+            <button class="btn btn-warning" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+       <!-- Laguage -->
+      <ul class="navbar-nav me-auto px-5">
+        <li class="nav-item dropdown  px-4 pt-1">
+          <a href="#" class="nav-link dropdown-toggle" href="#" id="preferLanguageDropdwon" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-2x fa-language text-light"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="preferLanguageDropdwon">
+            <form class="p-2" action="">
+              <div class="dropdwon-divider"></div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="preferLang" id="englishLang" value="english" checked>
+                <label class="form-check-label" for="englishLang">
+                  <img src="../../assets/flags/usa.jpg" width="30" height="30" alt="">
+                </label>
+              </div>
+              <div class="dropdwon-divider"></div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="preferLang" id="teluguLang" value="telugu" checked>
+                <label class="form-check-label" for="teluguLang">
+                  <img src="../../assets/flags/ind.jpg" width="30" height="30" alt="">
+                </label>
+              </div>
+              <div class="dropdwon-divider"></div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="preferLang" id="temilLang" value="temil" checked>
+                <label class="form-check-label" for="temilLang">
+                  <img src="../../assets/flags/uk.jpg" width="30" height="30" alt="">
+                </label>
+              </div>
+              <div class="dropdwon-divider"></div>
+            </form>
+          </div>
+        </li>
+        <!-- user Account -->
+        <li class="nav-item dropdown px-4 pt-1" >
+          <div   *ngIf="currentUser; else loggedOut" >
+          <strong>{{ currentUser.username }}</strong> 
+        </div>
+        <ng-template #loggedOut>
+          <a href="#" class="nav-link" href="#" id="userAccount" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <i class="fa fa-2x fa-user-circle text-light"></i>
+        </a>
+        
+        <div class="dropdown-menu px-4 pt-1" aria-labelledby="userAccount">
+          <div class="row d-flex flex-column justify-content-center ">
+            <a href="#" class="btn btn-warning w-100 btn-sm font-weight-bold">Signin</a>
+            <small class="text-muted">New customer?<a href="#">Starthere.</a></small>
+          </div>
+        </div> 
+        </ng-template> </li>
+        <!-- User Account end -->
+  
+        <!-- Add Cart -->
+        <li class="nav-item dropdown px-4 pt-1">
+          <a class="nav-link " href="#" id="addCart" role="button" data-bs-toggle="dropdown" aria-disabled="false">
+            <p class="">
+              <mat-icon class="pt-1 text-light sm" matBadge="10" matBadgeColor="warn">shopping_cart</mat-icon>
+            </p>
+          </a>
+          <div class="dropdown-menu px-5" aria-labelledby="userAccount">
+            <div class="row d-flex flex-column justify-content-center ">
+              <p>Your Items</p>
+            </div>
+          </div>
+        </li>
+        <!-- Logout -->
+        <li class="nav-item px-4 pt-3" aria-labelledby="userAccount">
+          <a href="#">
+            <mat-icon class=" text-light">logout</mat-icon>
+          </a>
+        </li>
+        
+      </ul>
+  
+    </div>
+  </nav>
+  <!-- Navbar end -->
+  
+
+  
+  
+  
